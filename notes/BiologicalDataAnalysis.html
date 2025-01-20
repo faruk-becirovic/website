@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-01-10 Tue 17:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc4823dd">1. Basics of Python</a></li>
+<li><a href="#orgfc8e5a2">2. Functional Programming</a>
+<ul>
+<li><a href="#orgc084a1f">2.1. <span class="todo TODO">TODO</span> Lambda functions</a></li>
+<li><a href="#org083d990">2.2. <span class="todo TODO">TODO</span> Filter maps</a></li>
+<li><a href="#org52f3e5d">2.3. <span class="todo TODO">TODO</span> List comprehension</a></li>
+</ul>
+</li>
+<li><a href="#org6079d1c">3. Regular Expressions</a></li>
+<li><a href="#org251141b">4. Statistics</a></li>
+<li><a href="#org57dd805">5. Multivariate Analysis</a></li>
+<li><a href="#orgc74b877">6. Basics of Biology</a>
+<ul>
+<li><a href="#org9b23800">6.1. DNA</a></li>
+<li><a href="#org84f843c">6.2. RNA?</a></li>
+<li><a href="#org5f309ea">6.3. Proteins</a>
+<ul>
+<li><a href="#org2c6b7ec">6.3.1. Codons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8ba5604">7. Genetic Databases</a>
+<ul>
+<li><a href="#org7e2e059">7.1. Data Formats</a></li>
+</ul>
+</li>
+<li><a href="#orgc8edecb">8. Genome Browsers</a>
+<ul>
+<li><a href="#orgb5a91a2">8.1. USCS</a></li>
+<li><a href="#org9b9fc7e">8.2. BLAT</a></li>
+<li><a href="#orgd848ce7">8.3. Ensembl</a></li>
+<li><a href="#org9ad6e37">8.4. UniProt</a></li>
+<li><a href="#org983d8fe">8.5. SNPs</a></li>
+</ul>
+</li>
+<li><a href="#orgae9ab29">9. Sequence Alignment</a></li>
+<li><a href="#orgdd16946">10. Biopython</a></li>
+<li><a href="#org6e75ae0">11. Pfam</a></li>
+<li><a href="#org9d65713">12. NumPy</a></li>
+<li><a href="#org4a89e36">13. Pandas</a></li>
+<li><a href="#org0fd98b9">14. Visualisation</a></li>
+<li><a href="#orge18d0fa">15. Gene Expression</a></li>
+<li><a href="#org5c25075">16. Human Genome Variation</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc4823dd" class="outline-2">
+<h2 id="orgc4823dd"><span class="section-number-2">1.</span> Basics of Python</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Python is a dynamically typed, general-purpose programming language used in a variety of settings and projects. It can be used in various
+fields, such as desktop application development, data science, machine learning, as well as web-application development. It is often used in
+fields that require analysis and processing of large amounts of data, including biological data analysis. Due to its relative simplicity
+Python can be used by people with various backgorunds, that may not have experience in software development.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfc8e5a2" class="outline-2">
+<h2 id="orgfc8e5a2"><span class="section-number-2">2.</span> Functional Programming</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc084a1f" class="outline-3">
+<h3 id="orgc084a1f"><span class="section-number-3">2.1.</span> <span class="todo TODO">TODO</span> Lambda functions</h3>
+</div>
+<div id="outline-container-org083d990" class="outline-3">
+<h3 id="org083d990"><span class="section-number-3">2.2.</span> <span class="todo TODO">TODO</span> Filter maps</h3>
+</div>
+<div id="outline-container-org52f3e5d" class="outline-3">
+<h3 id="org52f3e5d"><span class="section-number-3">2.3.</span> <span class="todo TODO">TODO</span> List comprehension</h3>
+</div>
+</div>
+
+<div id="outline-container-org6079d1c" class="outline-2">
+<h2 id="org6079d1c"><span class="section-number-2">3.</span> Regular Expressions</h2>
+</div>
+<div id="outline-container-org251141b" class="outline-2">
+<h2 id="org251141b"><span class="section-number-2">4.</span> Statistics</h2>
+</div>
+<div id="outline-container-org57dd805" class="outline-2">
+<h2 id="org57dd805"><span class="section-number-2">5.</span> Multivariate Analysis</h2>
+</div>
+
+<div id="outline-container-orgc74b877" class="outline-2">
+<h2 id="orgc74b877"><span class="section-number-2">6.</span> Basics of Biology</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+In the biology of the cell there are three main polymers that determine how cells function. These polymers are often studied using
+computational methods. The three polymers are <i>DNA</i>, <i>RNA</i>, and <i>proteins</i>.
+The DNA is considered to play informational role, in the sense that it stores the biological, or genetic information. The proteins are
+considered to play purely functional role in the cell. While RNA is considered to be both informational and functional elements in cells.
+</p>
+</div>
+
+<div id="outline-container-org9b23800" class="outline-3">
+<h3 id="org9b23800"><span class="section-number-3">6.1.</span> DNA</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+DNA stands for <i>deoxyribonucleic accid</i>. The DNA is a blueprint of life. The monomers of DNA are nucleotides.
+These nucleotides are <i>Adenosine</i>, <i>Thymine</i>, <i>Cytosine</i>, <i>Guanine</i>. They bind exclusively \(A-T\), \(G-C\).
+The entire string that describes nucleotides is called sequence. DNA contains functional properties of organisms. Not entire DNA condes for
+functional properties, some parts code to RNA and then to protein, and then some codes only into RNA.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84f843c" class="outline-3">
+<h3 id="org84f843c"><span class="section-number-3">6.2.</span> RNA?</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+RNA stands for <i>ribonucleic accid</i>. The RNA is similar to DNA. The DNA transcribes into RNA, which is similar. DNA and RNA differ in their
+chemistry and their role in the cell. RNA monomers are Adenosine, Guanine, <i>Uracil</i>, Cytosine.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5f309ea" class="outline-3">
+<h3 id="org5f309ea"><span class="section-number-3">6.3.</span> Proteins</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Proteins are translated from RNA. They act as molecular "machines". Their buildsing blocks are amino accids. Proteins are linear polymers
+of amino accids. Evendough around 60 amino accids are typically present in the cell, only around 20 of them regularlly participate
+in the synthesis of proteins
+</p>
+</div>
+
+<div id="outline-container-org2c6b7ec" class="outline-4">
+<h4 id="org2c6b7ec"><span class="section-number-4">6.3.1.</span> Codons</h4>
+<div class="outline-text-4" id="text-6-3-1">
+<p>
+Inside chromosome, a region of the DNA is transcribed into RNA. The <i>messenger RNA</i> is made into protein molecule in a process of translation.
+The RNA is made up of four nucleotides. And proteins are made up of 20 common amino acids. Because of this disparity every amino acid is
+specidfied by a combination of RNA nucleotides. These combinations are called <i>codons</i>. Codons are made up of three nucleotides and a codon
+can relate to only one amino acid. Since there are four nucleotides, and codons are made up of three nucleotides, there are
+\(64 = 4 \times 4 \times 4\) triplet nucleotide sequence that make up a codon. Every codon relates to at most one amino acid, however, some
+amino acids are specified by more than one codon. Some codons will indicate that a protein sequecne should stop.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8ba5604" class="outline-2">
+<h2 id="org8ba5604"><span class="section-number-2">7.</span> Genetic Databases</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Genome is constant. Genome codes the DNA.Genome sequencing should always produce the same result. Genome can be coding part, which contains
+genes, which can be transcribed into RNA, and then translated into proteins. Anoteher type of genome is non-coding part which
+contains repetative genome.
+</p>
+
+<p>
+Transcriptome is variable. It can change between sequencing procedures and it depends on many factors. Transcriptome codes for the RNA.
+Transcriptome study reveals genes that are differently expressed between different cells. Transcriptomes, thus allow for disease
+identification, unveil specific treatment options, or enable additional research.
+</p>
+
+<p>
+Protome is sequenced protein and Metabolome usually denotes sequences of monomers such as amino acids, nucleotides, or polysaccharids.
+</p>
+
+<p>
+Types of molecular databases:
+</p>
+<ul class="org-ul">
+<li>Primary databases:
+<ul class="org-ul">
+<li>Original submissions by experimentalists</li>
+<li>Content is controlled and verified by the submitter</li>
+<li>Examples include: GenBank, Trace, SRA, SNP, GEO&#x2026;</li>
+</ul></li>
+<li>Derivative databases:
+<ul class="org-ul">
+<li>They are derivated from primary databases, and are curated and often integrated with a primary database,</li>
+<li>The content is controlled by the curator</li>
+<li>NCBI Protein, RefSeq, UniGene.</li>
+</ul></li>
+</ul>
+
+<p>
+Nonredundant, curated databases are:
+</p>
+<ul class="org-ul">
+<li>DNA:
+<ul class="org-ul">
+<li>RefSeq(NCBI; semi-automated)</li>
+<li>Ensembl gene index (automated)</li>
+</ul></li>
+<li>Proteins:
+<ul class="org-ul">
+<li>RefSeq(NCBI; semiautomated)</li>
+<li>TrEMBL(EMBL; automated)</li>
+</ul></li>
+</ul>
+
+<p>
+RefSeq is contains a non-redundant set of genes and proteins for various organisms, and is generally considered most exhaustive database.
+</p>
+</div>
+
+<div id="outline-container-org7e2e059" class="outline-3">
+<h3 id="org7e2e059"><span class="section-number-3">7.1.</span> Data Formats</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+The sequence files use different standard file formats. Some of the most common are:
+</p>
+<dl class="org-dl">
+<dt>JSON</dt><dd>Readable to both humans and computers, is a hierarchical format, it is easy to use in dynamic programming langugages.</dd>
+<dt>XML</dt><dd>Is related to HTML, it is a predecessor of the JSON, it is more scalable than JSON.</dd>
+<dt>CSV</dt><dd>Stand for <i>Comma Separated Values</i>, is easy to read and write, and is supported by <i>spreadsheet software</i>.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc8edecb" class="outline-2">
+<h2 id="orgc8edecb"><span class="section-number-2">8.</span> Genome Browsers</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+A genome browser is a type of browser that can retrieve genomic data. There are several different borwsers like USCS, Ensembl and more.
+</p>
+</div>
+
+<div id="outline-container-orgb5a91a2" class="outline-3">
+<h3 id="orgb5a91a2"><span class="section-number-3">8.1.</span> USCS</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+<a href="https://www.genome.ucsc.edu/">USCS</a>
+</p>
+
+<p>
+USCS is updated often, it is easy to use. It can be used to find a gene, by name or by sequence. It can be used to find gene structure,
+<i>sequence orthologues</i>, single nucleotide polymorphisms (SNPs). USCS posseses a <i>gene sorter</i>, that can sort the results according to
+expresion, homology&#x2026; The data in the browser is organised into <i>tracks</i>, such as chromosome bands, gap locations, known genes,
+predicted genes, phenotypes, or even custom tracks.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b9fc7e" class="outline-3">
+<h3 id="org9b9fc7e"><span class="section-number-3">8.2.</span> BLAT</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+BLAT stands for <i>BLAST Like Alignemnt Tool</i>, it searches by indexing the entire genome, and works best with high-similarity matches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd848ce7" class="outline-3">
+<h3 id="orgd848ce7"><span class="section-number-3">8.3.</span> Ensembl</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+<a href="https://www.ensembl.org/index.html">Ensembl</a>
+</p>
+
+<p>
+Not as user friendy as USCS, however it is updated more often and contains the most recent genomic data. Ensembl genome browser can be
+searched by gene name, organism, chromosome, seqence within a cromosome, or by genetic polymorphisms. The data accessible on Ensembl includes
+genome assembly, variation, comparative genomics, gene anotation and regulation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ad6e37" class="outline-3">
+<h3 id="org9ad6e37"><span class="section-number-3">8.4.</span> UniProt</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+<a href="https://www.uniprot.org/">UniProt</a>
+</p>
+
+<p>
+It is important to note that the Proteins are more than their sequence. That is the protein's function is determined by more factors than
+just their sequence. Some of these factors are localisation, function, structure etc. Uniprot is a unified database of many constituent
+databases such as <i>Swiss-Prot</i>, <i>PIR</i>, <i>TERMBL</i>, <i>PDB</i>&#x2026; UniProt aims to provide high quality protein sequence database, with easy protein
+identification and thorough protein annotation. UniProt is to provide all encoded protein by a single gene of a species in one entry.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org983d8fe" class="outline-3">
+<h3 id="org983d8fe"><span class="section-number-3">8.5.</span> SNPs</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+SNP (<i>snips</i>) is a <i>Single Nucleotide Polymorphism</i>. They are differences in only one nucleotide. A typical human genome differs from the
+refference human genome at 4 to 5 million sites, which is about \(0.15%\). Most of those differences are SNPs. The SNPs can have a
+clinical significance.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae9ab29" class="outline-2">
+<h2 id="orgae9ab29"><span class="section-number-2">9.</span> Sequence Alignment</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Sequence alignment is a method used in molecular biology and bioinformatics to identify similarities in DNA, RNA, or protein sequences.
+It allows researchers to identify conserved regions, understand the functional and structural characteristics of the sequences, and infer
+the evolutionary relationships between them. There are two main types of sequence alignment: global and local. Global alignment compares
+the entire length of two or more sequences and tries to align them in their entirety. Local alignment, on the other hand, compares only
+a part of the sequences and tries to find the best match between them.
+</p>
+
+<p>
+Sequence alignment algorithms work by comparing the sequences letter by letter, and scoring the similarity between them based on the
+degree of match or mismatch. The score is usually based on the substitution matrix, which assigns a score to each possible pair of
+residues (amino acids or nucleotides). The substitution matrix takes into account the physical and chemical properties of the residues
+and assigns higher scores to the pairs that are more similar. The algorithms then try to maximize the score by aligning the residues that
+have the highest score and introducing gaps in the sequences wherever necessary to align the residues that do not match.
+The gap penalty is a score that is assigned to the gaps introduced in the alignment, and it is used to discourage the algorithms from
+introducing too many gaps in the alignment.
+</p>
+
+<p>
+Pairwise alignment is a type of sequence alignment that compares two sequences and tries to align them in the best possible way. It is
+an important tool in various applications such as gene prediction, protein structure prediction, and evolutionary analysis.
+Pairwise alignment algorithms work in a similar way to other sequence alignment algorithms, but they only compare two sequences at a time.
+By comparing two sequences and identifying the similarities and differences between them, researchers can gain insights into the functional
+and evolutionary relationships between the sequences.
+</p>
+
+<p>
+There are several algorithms available for sequence alignment, including dynamic programming algorithms such as Smith-Waterman and
+Needleman-Wunsch, and heuristic algorithms such as BLAST (Basic Local Alignment Search Tool). The choice of algorithm depends on the
+specific application and the type of sequences being aligned. BLAST is a popular heuristic algorithm that is fast and efficient, but it
+may not find all of the possible alignments.
+</p>
+
+<p>
+Dynamic programming algorithms are a type of algorithm that solve problems by breaking them down into smaller subproblems, solving the
+subproblems, and then combining the solutions to the subproblems to get the solution to the original problem. Dynamic programming algorithms
+are generally more accurate than heuristic algorithms, but they can be slower and more computationally intensive.
+</p>
+
+<p>
+Two popular dynamic programming algorithms for sequence alignment are Smith-Waterman and Needleman-Wunsch. Smith-Waterman is a local
+alignment algorithm, which means it compares only a part of the sequences and tries to find the best match between them. It is used to
+find the best possible alignment between two sequences with the highest score. Needleman-Wunsch is a global alignment algorithm,
+which means it compares the entire length of two sequences and tries to align them in their entirety. It is used to find the best possible
+alignment between two sequences with the highest overall score.
+</p>
+
+<p>
+Heuristic algorithms are a type of algorithm that use a set of rules or guidelines to find a solution to a problem, but they do not
+guarantee the optimal solution. Heuristic algorithms are generally faster than dynamic programming algorithms, but they may not be as
+accurate.
+</p>
+
+<p>
+BLAST (Basic Local Alignment Search Tool) is a popular heuristic algorithm for sequence alignment. It works by finding short, identical
+or similar sequences (called "words") in the query and subject sequences, and extending the alignment from these seeds.
+It is fast and efficient, but it may not find all of the possible alignments. There are several versions of BLAST available, including
+BLASTN for nucleotide-nucleotide alignment, BLASTP for protein-protein alignment, and BLASTX for protein-nucleotide alignment.
+</p>
+
+<p>
+Aligning two DNA sequences to identify the conserved regions and infer the evolutionary relationships between them. For example, aligning
+the sequences of two related genes from different species can help researchers understand how the genes have evolved over time and how they
+are similar or different.
+</p>
+
+<p>
+Aligning two protein sequences to predict the structure and function of the proteins. By aligning the sequences of two proteins that are
+known to have similar structures or functions, researchers can identify the conserved regions that are likely to be important for the
+protein's function.
+</p>
+
+<p>
+Aligning two RNA sequences to identify the regions of complementarity and predict the secondary structure of the RNA molecules.
+By aligning the sequences of two RNA molecules that are known to interact with each other, researchers can identify the regions of
+complementarity that are likely to be involved in the interaction.
+</p>
+
+<p>
+Aligning two sequences of different types (e.g., DNA and protein) to identify the regions of conservation and infer the evolutionary
+relationships between them. By aligning the sequences of a protein and its corresponding gene, researchers can understand how the
+protein is encoded by the gene and how it has evolved over time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdd16946" class="outline-2">
+<h2 id="orgdd16946"><span class="section-number-2">10.</span> Biopython</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="https://biopython.org/">biopython</a>
+</p>
+
+<p>
+Large files are common in biological databases. Since computers have finite amount of memory it is useful to utilise Python generators.
+Biopython provides a generator interface.
+</p>
+
+<p>
+FASTA is very common and useful format, it is simple and readable format for biological sequecnes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e75ae0" class="outline-2">
+<h2 id="org6e75ae0"><span class="section-number-2">11.</span> Pfam</h2>
+</div>
+<div id="outline-container-org9d65713" class="outline-2">
+<h2 id="org9d65713"><span class="section-number-2">12.</span> NumPy</h2>
+</div>
+<div id="outline-container-org4a89e36" class="outline-2">
+<h2 id="org4a89e36"><span class="section-number-2">13.</span> Pandas</h2>
+</div>
+<div id="outline-container-org0fd98b9" class="outline-2">
+<h2 id="org0fd98b9"><span class="section-number-2">14.</span> Visualisation</h2>
+</div>
+<div id="outline-container-orge18d0fa" class="outline-2">
+<h2 id="orge18d0fa"><span class="section-number-2">15.</span> Gene Expression</h2>
+</div>
+<div id="outline-container-org5c25075" class="outline-2">
+<h2 id="org5c25075"><span class="section-number-2">16.</span> Human Genome Variation</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-01-10 Tue 17:58</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

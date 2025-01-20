@@ -1,0 +1,45 @@
+#+AUTHOR: Faruk Bećirović
+#+OPTIONS: toc:nil num:nil author:nil timestamp:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
+#+HTML_HEAD: <link rel="icon" href="/favicon.ico" type="image/x-icon">
+#+HTML_HEAD: <script>function toggleCitation(id) {  const citation = document.getElementById(id);  if (citation.style.display === "none") {    citation.style.display = "block";  } else {    citation.style.display = "none";  }}</script>
+
+* Publications
+This is the most recent list of my published items:
+
+** Assessing the Accuracy of Logistic Regression and Bert in Sentiment Analysis and Mental Disorder Classification
+- *Authors:* Faruk Bećirović, Nejra Merdović, Madžida Hundur Hiyari, Merima Smajlhodžić-Deljo, Irma Salkić, Adna Softić  
+- *DOI:* [[https://doi.org/10.5644/PI2024.215.19][10.5644/PI2024.215.19]]
+- *Citation (BibTeX):*
+  #+BEGIN_SRC text
+    @inproceedings{Becirovic_2024,
+	    title={Assessing the Accuracy of Logistic Regression and Bert in Sentiment Analysis and Mental Disorder Classification},
+	    url={http://dx.doi.org/10.5644/PI2024.215.19},
+	    DOI={10.5644/pi2024.215.19},
+	    journal={Artificial Intelligence in Industry 4.0: The future that comes true},
+	    publisher={Academy of Sciences and Arts of Bosnia and Herzegovina},
+	    author={Bećirović, Faruk and Merdović, Nejra and Hundur Hiyari, Madžida and Smajlhodžić-Deljo, Merima and Salkić, Irma and Softić, Adna},
+	    year={2024},
+	    month=sep,
+	    pages={317–326}
+	    }
+  #+END_SRC
+
+** Liver Disease Classification Using Machine Learning
+- *Authors:* Madžida Hundur Hiyari, Nejra Merdović, Faruk Bećirović, Emina Mrđanović, Adna Softić
+- *DOI:* [[https://doi.org/10.5644/pi2024.215.16][10.5644/pi2024.215.16]]
+- *Citation (BibTeX):*
+  #+BEGIN_SRC text
+    @misc{HundurHiyari_2024,
+	    title={Liver Disease Classification Using Machine Learning},
+	    url={http://dx.doi.org/10.5644/PI2024.215.16},
+	    DOI={10.5644/pi2024.215.16},
+	    journal={Artificial Intelligence in Industry 4.0: The future that comes true},
+	    publisher={Academy of Sciences and Arts of Bosnia and Herzegovina},
+	    author={Hundur Hiyari, Madžida and Merdović, Nejra and Bećirović, Faruk and Mrđanović, Emina and Softić, Adna},
+	    year={2024},
+	    month=sep,
+	    pages={280–287}
+	    }
+  #+END_SRC
+

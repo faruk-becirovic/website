@@ -1,0 +1,102 @@
+/* Custom font */
+body {
+    font-family: Montserrat, Sans Serif, Helvetica, Arial, sans-serif; /* Change to your preferred font */
+    max-width: 600px; /* Controls text width */
+    margin: auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Header styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+
+.site-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007acc; /* Optional hover color */
+    border-bottom: 2px solid;
+    border-radius: 3px;
+}
+
+header, footer {
+    text-align: center;
+    padding: 10px;
+    border-color: #f4f4f9;
+    border-bottom: 2px;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+footer {
+    font-size: 0.8em;
+    color: #666;
+}
+
+section {
+    margin: 20px 0;
+}
+
+a {
+    color: #007acc;
+}
+
+a:active {
+    color: magenta;
+}
+
+/* Publications section */
+.publications {
+    margin-top: 20px;
+}
+
+.publications h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.publications p {
+    margin: 5px 0;
+}
+
+.publications pre {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    overflow-x: auto;
+}
+
+.publications a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.publications a:hover {
+    text-decoration: underline;
+}

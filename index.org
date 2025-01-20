@@ -1,0 +1,22 @@
+#+AUTHOR: Faruk Bećirović
+#+OPTIONS: toc:nil num:nil author:nil timestamp:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
+#+HTML_HEAD: <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+* About
+Hello! I'm **Faruk Bećirović**, a Computer Scientist and Systems Engineer currently based in Sarajevo. I specialise in computer vision and the use of artificial intelligence in healthcare and agriculture. I am also a part-time Teaching Assisstant at the International University of Sarajevo. I’m passionate about creating meaningful digital solutions and sharing knowledge through my work.
+
+* Projects
+**Project 1: Wheat Head Counting with YOLOv5**
+   - *Description*: A computer vision model for detecting and counting wheat heads, aimed at optimizing crop yield predictions.
+   - [[https://github.com/yourusername/project1][View on GitHub]]
+
+**Project 2: Nutrition Tracking App**
+   - *Description*: A mobile application that recommends dietary changes based on user input and tracks nutrition over time.
+   - [[https://github.com/yourusername/project2][View on GitHub]]
+
+* Contact
+Feel free to reach out for collaboration or questions. I’m available at [[mailto:you@example.com][you@example.com]].
+You can also connect with me on [[https://linkedin.com/in/yourusername][LinkedIn]] or check out my work on [[https://github.com/yourusername][GitHub]].
+

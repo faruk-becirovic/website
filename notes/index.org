@@ -1,0 +1,13 @@
+#+AUTHOR: Faruk Bećirović
+#+OPTIONS: toc:nil num:nil author:nil timestamp:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css">
+#+HTML_HEAD: <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+* Notes
+
+This page contains my personal notes
+
+- [[./CellBiology.html][Cell Biology]]
+- [[./CS510.html][Data Communication and Networks]]
+- [[./HCI.html][Human Computer Interaction]]
+- [[./manufacturing.html][Manufacturing Systems]]
