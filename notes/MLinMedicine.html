@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-26 Sun 07:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CS512 Machine Learning in Medicine and Health</title>
+<meta name="author" content="Faruk Becirovic" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">CS512 Machine Learning in Medicine and Health</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org27640d0">1. Understanding and Preparing Data</a>
+<ul>
+<li><a href="#org7754976">1.1. Data Understanding</a></li>
+<li><a href="#orga22fe29">1.2. Data Cleaning</a></li>
+</ul>
+</li>
+<li><a href="#org591d210">2. K-Nearest Neighbor Algorithm (k-NN)</a>
+<ul>
+<li><a href="#org8a8bbd5">2.1. Algorithm Overview</a></li>
+<li><a href="#org1301130">2.2. Choosing \( k \)</a></li>
+</ul>
+</li>
+<li><a href="#org2476126">3. Evaluating Model Performance</a>
+<ul>
+<li><a href="#org532f08c">3.1. Metrics for Classification</a></li>
+<li><a href="#orgf8a7ce0">3.2. Metrics for Regression</a></li>
+</ul>
+</li>
+<li><a href="#org7df9ffe">4. Decision Trees</a>
+<ul>
+<li><a href="#orgbbce4c5">4.1. Key Concepts</a></li>
+<li><a href="#orgb20eacf">4.2. Splitting Criteria</a></li>
+<li><a href="#orgb059eb8">4.3. Advantages and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#org7148ad3">5. Ensemble Methods</a>
+<ul>
+<li><a href="#org98a1779">5.1. Bagging (Bootstrap Aggregating)</a></li>
+<li><a href="#org107f690">5.2. Boosting</a></li>
+<li><a href="#orgb3b9465">5.3. Stacking</a></li>
+</ul>
+</li>
+<li><a href="#orgf392260">6. Feature Selection</a>
+<ul>
+<li><a href="#org7bda6c0">6.1. Methods of Feature Selection</a></li>
+<li><a href="#orgb577bac">6.2. Mathematical Insights</a></li>
+</ul>
+</li>
+<li><a href="#org7ad2c93">7. Naive Bayes</a>
+<ul>
+<li><a href="#org4260a80">7.1. Bayes' Theorem</a></li>
+<li><a href="#orgf06e1fb">7.2. Assumption of Conditional Independence</a></li>
+<li><a href="#org90670dd">7.3. Types of Naive Bayes</a></li>
+<li><a href="#org3ec7dad">7.4. Example: Disease Classification</a></li>
+<li><a href="#org4e4aa47">7.5. Advantages and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#org5874453">8. Regression</a>
+<ul>
+<li><a href="#org557ba78">8.1. Types of Regression</a></li>
+<li><a href="#orgdb20627">8.2. Model Evaluation Metrics</a></li>
+</ul>
+</li>
+<li><a href="#org3eda6aa">9. Artificial Neural Networks (ANNs)</a></li>
+<li><a href="#orgda1c0d0">10. Support Vector Machines (SVMs)</a></li>
+<li><a href="#org0c3cdd5">11. Clustering</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org27640d0" class="outline-2">
+<h2 id="org27640d0"><span class="section-number-2">1.</span> Understanding and Preparing Data</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Proper data understanding and preparation are essential steps for building reliable machine learning models in healthcare and medicine. The quality of the input data directly impacts model performance.
+</p>
+</div>
+
+<div id="outline-container-org7754976" class="outline-3">
+<h3 id="org7754976"><span class="section-number-3">1.1.</span> Data Understanding</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Types of Data:
+<dl class="org-dl">
+<dt>Numerical</dt><dd>Continuous variables like blood pressure, cholesterol levels, etc.</dd>
+<dt>Categorical</dt><dd>Variables like "Disease Status" (Positive/Negative).</dd>
+<dt>Time-Series</dt><dd>Variables like patient heart rate over time.</dd>
+<dt>Text</dt><dd>Examples include clinical notes or doctor’s comments.</dd>
+</dl></li>
+
+<li><p>
+Exploratory Data Analysis (EDA)
+Perform EDA to identify patterns, anomalies, and insights.
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Summarize data
+summary(data)
+
+# Visualizing numerical variable
+ggplot(data, aes(x = blood_pressure)) + 
+  geom_histogram(binwidth = 5, fill = "blue", color = "black") +
+  labs(title = "Distribution of Blood Pressure")
+
+# Check for missing values
+sum(is.na(data))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga22fe29" class="outline-3">
+<h3 id="orga22fe29"><span class="section-number-3">1.2.</span> Data Cleaning</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><p>
+Handling Missing Values:
+</p>
+<ul class="org-ul">
+<li>Remove rows/columns with excessive missing values.</li>
+<li>Impute missing values using statistical methods or predictive models.</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Impute missing values with the mean
+data$blood_pressure[is.na(data$blood_pressure)] &lt;- mean(data$blood_pressure, na.rm = TRUE)
+</pre>
+</div></li>
+
+<li><p>
+Outlier Detection:
+Detect outliers using techniques like boxplots or Z-scores.
+Formula for Z-Score:
+\[
+         Z = \frac{X - \mu}{\sigma}
+         \]
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Identify outliers using IQR
+Q1 &lt;- quantile(data$blood_pressure, 0.25)
+Q3 &lt;- quantile(data$blood_pressure, 0.75)
+IQR &lt;- Q3 - Q1
+
+# Define outlier thresholds
+lower_bound &lt;- Q1 - 1.5 * IQR
+upper_bound &lt;- Q3 + 1.5 * IQR
+
+# Filter outliers
+data &lt;- data %&gt;% filter(blood_pressure &gt;= lower_bound &amp; blood_pressure &lt;= upper_bound)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org591d210" class="outline-2">
+<h2 id="org591d210"><span class="section-number-2">2.</span> K-Nearest Neighbor Algorithm (k-NN)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The k-NN algorithm is a simple and effective method for classification and regression. It is particularly useful for medical applications such as disease prediction.
+</p>
+</div>
+
+<div id="outline-container-org8a8bbd5" class="outline-3">
+<h3 id="org8a8bbd5"><span class="section-number-3">2.1.</span> Algorithm Overview</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>Identify the \( k \) nearest data points (neighbors) to the input data based on a distance metric (e.g., Euclidean distance).</li>
+<li>For classification, assign the majority class of the \( k \) neighbors.</li>
+<li>For regression, assign the average value of the \( k \) neighbors.</li>
+
+<li>Euclidean Distance Formula:
+\[
+         d(i, j) = \sqrt{\sum_{n=1}^{p} (x_{in} - x_{jn})^2}
+         \]
+Where:
+<ul class="org-ul">
+<li>\( x_{in} \) and \( x_{jn} \) are feature values of points \( i \) and \( j \).</li>
+<li>\( p \) is the number of features.</li>
+</ul></li>
+</ol>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(class)
+
+# k-NN for classification
+predictions &lt;- knn(train = train_data, test = test_data, cl = train_labels, k = 5)
+
+# Confusion matrix
+table(predictions, test_labels)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1301130" class="outline-3">
+<h3 id="org1301130"><span class="section-number-3">2.2.</span> Choosing \( k \)</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Small \( k \): Leads to high variance (overfitting).</li>
+<li>Large \( k \): Leads to high bias (underfitting).</li>
+<li>Use cross-validation to optimize \( k \).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2476126" class="outline-2">
+<h2 id="org2476126"><span class="section-number-2">3.</span> Evaluating Model Performance</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Accurate evaluation is critical to assess how well a machine learning model generalizes to unseen data.
+</p>
+</div>
+
+<div id="outline-container-org532f08c" class="outline-3">
+<h3 id="org532f08c"><span class="section-number-3">3.1.</span> Metrics for Classification</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Accuracy:
+\[
+         Accuracy = \frac{\text{Correct Predictions}}{\text{Total Predictions}}
+         \]</li>
+
+<li>Precision, Recall, and F1-Score:
+\[
+         Precision = \frac{TP}{TP + FP}, \quad Recall = \frac{TP}{TP + FN}
+         \]
+\[
+         F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}
+         \]</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(caret)
+
+# Confusion matrix
+confusion &lt;- confusionMatrix(predictions, test_labels)
+
+# Print metrics
+print(confusion)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8a7ce0" class="outline-3">
+<h3 id="orgf8a7ce0"><span class="section-number-3">3.2.</span> Metrics for Regression</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Mean Absolute Error (MAE):
+\[
+         MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+         \]</li>
+<li>Mean Squared Error (MSE):
+\[
+         MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+         \]</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Calculate MAE and MSE
+mae &lt;- mean(abs(actual - predicted))
+mse &lt;- mean((actual - predicted)^2)
+
+cat("MAE:", mae, "\nMSE:", mse)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7df9ffe" class="outline-2">
+<h2 id="org7df9ffe"><span class="section-number-2">4.</span> Decision Trees</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Decision Trees are widely used in healthcare for tasks such as diagnosing diseases, predicting patient outcomes, and more. They work by recursively splitting the dataset based on feature values to create a tree-like structure.
+</p>
+</div>
+
+<div id="outline-container-orgbbce4c5" class="outline-3">
+<h3 id="orgbbce4c5"><span class="section-number-3">4.1.</span> Key Concepts</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Root Node:
+The top node of the tree that contains the entire dataset.</li>
+<li>Decision Nodes:
+Internal nodes where the dataset is split based on a feature.</li>
+<li>Leaf Nodes:
+Terminal nodes that contain the output class or value.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb20eacf" class="outline-3">
+<h3 id="orgb20eacf"><span class="section-number-3">4.2.</span> Splitting Criteria</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Gini Impurity:
+\[
+         Gini = 1 - \sum_{i=1}^{C} p_i^2
+         \]
+Where \( p_i \) is the proportion of class \( i \) in the split.</li>
+
+<li>Entropy and Information Gain:
+Entropy:
+\[
+         H(S) = - \sum_{i=1}^{C} p_i \log_2(p_i)
+         \]
+Information Gain:
+\[
+         IG = H(S) - \sum_{i=1}^{k} \frac{|S_i|}{|S|} H(S_i)
+         \]</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(rpart)
+
+# Fit a decision tree
+tree &lt;- rpart(disease ~ age + blood_pressure + cholesterol, data = train_data, method = "class")
+
+# Plot the tree
+plot(tree)
+text(tree, use.n = TRUE)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb059eb8" class="outline-3">
+<h3 id="orgb059eb8"><span class="section-number-3">4.3.</span> Advantages and Limitations</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Advantages:
+<ul class="org-ul">
+<li>Easy to interpret and visualize.</li>
+<li>Handles both numerical and categorical data.</li>
+</ul></li>
+<li>Limitations:
+<ul class="org-ul">
+<li>Prone to overfitting.</li>
+<li>Sensitive to small changes in data.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7148ad3" class="outline-2">
+<h2 id="org7148ad3"><span class="section-number-2">5.</span> Ensemble Methods</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Ensemble methods combine multiple models to improve overall prediction performance. They are highly effective in healthcare applications, such as risk prediction and personalized medicine.
+</p>
+</div>
+
+<div id="outline-container-org98a1779" class="outline-3">
+<h3 id="org98a1779"><span class="section-number-3">5.1.</span> Bagging (Bootstrap Aggregating)</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Combines multiple models (e.g., decision trees) trained on different bootstrap samples.</li>
+<li>Reduces variance and prevents overfitting.</li>
+<li>Example: Random Forest.</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(randomForest)
+
+# Fit a random forest model
+rf_model &lt;- randomForest(disease ~ ., data = train_data, ntree = 500)
+
+# View feature importance
+importance(rf_model)
+
+# Predict on test data
+predictions &lt;- predict(rf_model, test_data)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org107f690" class="outline-3">
+<h3 id="org107f690"><span class="section-number-3">5.2.</span> Boosting</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Sequentially builds models, giving more weight to misclassified instances.</li>
+<li>Reduces bias and improves accuracy.</li>
+<li>Example: Gradient Boosting Machines (GBM), XGBoost.</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(xgboost)
+
+# Convert data to matrix format
+train_matrix &lt;- as.matrix(train_data[, -1])
+train_label &lt;- train_data$disease
+
+# Fit an XGBoost model
+xgb_model &lt;- xgboost(data = train_matrix, label = as.numeric(train_label), nrounds = 100, objective = "binary:logistic")
+
+# Predict on test data
+predictions &lt;- predict(xgb_model, as.matrix(test_data[, -1]))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb3b9465" class="outline-3">
+<h3 id="orgb3b9465"><span class="section-number-3">5.3.</span> Stacking</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Combines predictions from multiple models using a meta-model.</li>
+<li>Provides flexibility by allowing different types of base models.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf392260" class="outline-2">
+<h2 id="orgf392260"><span class="section-number-2">6.</span> Feature Selection</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Feature selection is critical in healthcare to improve model interpretability, reduce overfitting, and focus on relevant features (e.g., biomarkers or clinical test results).
+</p>
+</div>
+
+<div id="outline-container-org7bda6c0" class="outline-3">
+<h3 id="org7bda6c0"><span class="section-number-3">6.1.</span> Methods of Feature Selection</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Filter Methods:
+<ul class="org-ul">
+<li>Use statistical tests to rank features.</li>
+<li>Example: Pearson correlation, Chi-squared test.</li>
+</ul></li>
+<li>Wrapper Methods:
+<ul class="org-ul">
+<li>Evaluate feature subsets by training models.</li>
+<li>Example: Recursive Feature Elimination (RFE).</li>
+</ul></li>
+<li>Embedded Methods:
+<ul class="org-ul">
+<li>Feature selection is part of the model training process.</li>
+<li>Example: LASSO (Least Absolute Shrinkage and Selection Operator).</li>
+</ul></li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Recursive Feature Elimination (RFE)
+library(caret)
+
+# Define control
+ctrl &lt;- rfeControl(functions = rfFuncs, method = "cv", number = 5)
+
+# Perform RFE
+rfe_results &lt;- rfe(train_data[, -1], train_data$disease, sizes = c(1:10), rfeControl = ctrl)
+
+# View selected features
+print(rfe_results)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb577bac" class="outline-3">
+<h3 id="orgb577bac"><span class="section-number-3">6.2.</span> Mathematical Insights</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>LASSO Regularization:
+\[
+         \min \frac{1}{2n} \|y - X\beta\|_2^2 + \lambda \|\beta\|_1
+         \]
+Where:
+<ul class="org-ul">
+<li>\( \lambda \): Regularization parameter.</li>
+<li>\( \|\beta\|_1 \): Sum of absolute values of coefficients.</li>
+</ul></li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Fit LASSO model
+library(glmnet)
+
+# Prepare data
+x &lt;- as.matrix(train_data[, -1])
+y &lt;- train_data$disease
+
+# Fit the model
+lasso_model &lt;- glmnet(x, y, alpha = 1)
+
+# Plot coefficients
+plot(lasso_model)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7ad2c93" class="outline-2">
+<h2 id="org7ad2c93"><span class="section-number-2">7.</span> Naive Bayes</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem, with the assumption that features are conditionally independent given the class label. It is particularly useful for disease prediction and text classification in healthcare.
+</p>
+</div>
+
+<div id="outline-container-org4260a80" class="outline-3">
+<h3 id="org4260a80"><span class="section-number-3">7.1.</span> Bayes' Theorem</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>The foundation of Naive Bayes is Bayes' Theorem:
+\[
+         P(C|X) = \frac{P(X|C) \cdot P(C)}{P(X)}
+         \]
+Where:
+<ul class="org-ul">
+<li>\( P(C|X) \): Posterior probability of class \( C \) given features \( X \).</li>
+<li>\( P(X|C) \): Likelihood of features given class \( C \).</li>
+<li>\( P(C) \): Prior probability of class \( C \).</li>
+<li>\( P(X) \): Marginal probability of features \( X \).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf06e1fb" class="outline-3">
+<h3 id="orgf06e1fb"><span class="section-number-3">7.2.</span> Assumption of Conditional Independence</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>The Naive Bayes assumption simplifies calculations:
+\[
+         P(X|C) = P(x_1|C) \cdot P(x_2|C) \cdot \ldots \cdot P(x_n|C)
+         \]
+Where \( x_1, x_2, \ldots, x_n \) are individual features.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org90670dd" class="outline-3">
+<h3 id="org90670dd"><span class="section-number-3">7.3.</span> Types of Naive Bayes</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Gaussian Naive Bayes:
+Assumes features follow a normal distribution:
+\[
+         P(x|C) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
+         \]</li>
+
+<li>Multinomial Naive Bayes:
+Suitable for discrete data, often used in text classification.</li>
+
+<li>Bernoulli Naive Bayes:
+Used for binary feature data.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3ec7dad" class="outline-3">
+<h3 id="org3ec7dad"><span class="section-number-3">7.4.</span> Example: Disease Classification</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(e1071)
+
+# Fit a Naive Bayes model
+nb_model &lt;- naiveBayes(disease ~ age + blood_pressure + cholesterol, data = train_data)
+
+# Predict on test data
+predictions &lt;- predict(nb_model, test_data)
+
+# Evaluate performance
+confusionMatrix(predictions, test_data$disease)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e4aa47" class="outline-3">
+<h3 id="org4e4aa47"><span class="section-number-3">7.5.</span> Advantages and Limitations</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>Advantages:
+<ul class="org-ul">
+<li>Simple and efficient.</li>
+<li>Handles both continuous and categorical data.</li>
+</ul></li>
+<li>Limitations:
+<ul class="org-ul">
+<li>Strong independence assumption rarely holds in real-world data.</li>
+<li>Poor performance with highly correlated features.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5874453" class="outline-2">
+<h2 id="org5874453"><span class="section-number-2">8.</span> Regression</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Regression is used to predict continuous outcomes in healthcare, such as estimating patient risk scores, disease progression, or healthcare costs.
+</p>
+</div>
+
+<div id="outline-container-org557ba78" class="outline-3">
+<h3 id="org557ba78"><span class="section-number-3">8.1.</span> Types of Regression</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><p>
+Linear Regression:
+Predicts the relationship between a dependent variable \( y \) and one or more independent variables \( X \).
+\[
+         y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_nx_n + \epsilon
+         \]
+Where:
+</p>
+<ul class="org-ul">
+<li>\( \beta_0 \): Intercept.</li>
+<li>\( \beta_1, \ldots, \beta_n \): Coefficients.</li>
+<li>\( \epsilon \): Error term.</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Fit a linear regression model
+lm_model &lt;- lm(blood_pressure ~ age + cholesterol, data = train_data)
+
+# Summarize the model
+summary(lm_model)
+
+# Predict on test data
+predictions &lt;- predict(lm_model, test_data)
+</pre>
+</div></li>
+
+<li><p>
+Logistic Regression:
+Used for binary classification problems (e.g., disease presence/absence).
+Logistic function:
+\[
+         P(y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \ldots + \beta_nx_n)}}
+         \]
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Fit a logistic regression model
+logit_model &lt;- glm(disease ~ age + cholesterol, data = train_data, family = binomial)
+
+# Summarize the model
+summary(logit_model)
+
+# Predict probabilities
+probabilities &lt;- predict(logit_model, test_data, type = "response")
+
+# Convert probabilities to binary classes
+predictions &lt;- ifelse(probabilities &gt; 0.5, 1, 0)
+</pre>
+</div></li>
+
+<li><p>
+Ridge and Lasso Regression:
+</p>
+<ul class="org-ul">
+<li>Ridge Regression:
+Adds \( L_2 \) regularization to prevent overfitting:
+\[
+           \min \|y - X\beta\|_2^2 + \lambda \|\beta\|_2^2
+           \]</li>
+
+<li>Lasso Regression:
+Adds \( L_1 \) regularization for feature selection:
+\[
+           \min \|y - X\beta\|_2^2 + \lambda \|\beta\|_1
+           \]</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Fit Ridge and Lasso models
+library(glmnet)
+
+# Prepare data
+x &lt;- as.matrix(train_data[, -1])
+y &lt;- train_data$outcome
+
+# Ridge Regression
+ridge_model &lt;- glmnet(x, y, alpha = 0)
+
+# Lasso Regression
+lasso_model &lt;- glmnet(x, y, alpha = 1)
+
+# Plot coefficients for Lasso
+plot(lasso_model)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdb20627" class="outline-3">
+<h3 id="orgdb20627"><span class="section-number-3">8.2.</span> Model Evaluation Metrics</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>Mean Absolute Error (MAE):
+\[
+         MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+         \]</li>
+<li>Mean Squared Error (MSE):
+\[
+         MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+         \]</li>
+<li>\( R^2 \) Score:
+\[
+         R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
+         \]</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Evaluate model performance
+MAE &lt;- mean(abs(predictions - test_data$outcome))
+MSE &lt;- mean((predictions - test_data$outcome)^2)
+R2 &lt;- 1 - sum((predictions - test_data$outcome)^2) / sum((test_data$outcome - mean(test_data$outcome))^2)
+
+list(MAE = MAE, MSE = MSE, R2 = R2)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3eda6aa" class="outline-2">
+<h2 id="org3eda6aa"><span class="section-number-2">9.</span> Artificial Neural Networks (ANNs)</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Artificial Neural Networks are computational models inspired by the human brain, designed to identify patterns and relationships in complex data. In healthcare, ANNs are used for disease diagnosis, risk prediction, and image analysis.
+</p>
+
+<p>
+** Structure of ANNs
+</p>
+<ul class="org-ul">
+<li>Components:
+<ul class="org-ul">
+<li><b><b>Input Layer</b></b>: Takes input features (e.g., patient data, medical images).</li>
+<li><b><b>Hidden Layers</b></b>: Perform computations via weighted connections and activation functions.</li>
+<li><b><b>Output Layer</b></b>: Produces predictions (e.g., disease classification, survival probability).</li>
+</ul></li>
+<li>Formula:
+\[
+         y = f\left( \sum_{i=1}^{n} w_i x_i + b \right)
+         \]
+Where:
+<ul class="org-ul">
+<li>\( x_i \): Input features.</li>
+<li>\( w_i \): Weights.</li>
+<li>\( b \): Bias.</li>
+<li>\( f \): Activation function (e.g., ReLU, sigmoid).</li>
+</ul></li>
+</ul>
+
+<p>
+** Activation Functions
+</p>
+<ul class="org-ul">
+<li>Sigmoid:
+\[
+         f(x) = \frac{1}{1 + e^{-x}}
+         \]</li>
+<li>ReLU (Rectified Linear Unit):
+\[
+         f(x) = \max(0, x)
+         \]</li>
+<li>Softmax (for multi-class classification):
+\[
+         f(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}
+         \]</li>
+</ul>
+
+<p>
+** Training ANNs
+</p>
+<ul class="org-ul">
+<li><b><b>Forward Propagation</b></b>: Compute outputs through layers.</li>
+<li><b><b>Loss Function</b></b>: Quantifies error (e.g., Mean Squared Error, Cross-Entropy).</li>
+<li><b><b>Backpropagation</b></b>: Adjusts weights using gradients to minimize loss.</li>
+<li>Optimizer: Uses algorithms like Gradient Descent to optimize weights.</li>
+</ul>
+
+<p>
+** Example: Predicting Disease Outcomes
+    Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(keras)
+
+# Define the model
+model &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 64, activation = "relu", input_shape = c(10)) %&gt;%
+  layer_dense(units = 1, activation = "sigmoid")
+
+# Compile the model
+model %&gt;% compile(
+  optimizer = "adam",
+  loss = "binary_crossentropy",
+  metrics = c("accuracy")
+)
+
+# Train the model
+history &lt;- model %&gt;% fit(
+  train_data, train_labels,
+  epochs = 50, batch_size = 32,
+  validation_split = 0.2
+)
+
+# Evaluate performance
+model %&gt;% evaluate(test_data, test_labels)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgda1c0d0" class="outline-2">
+<h2 id="orgda1c0d0"><span class="section-number-2">10.</span> Support Vector Machines (SVMs)</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Support Vector Machines are supervised learning algorithms used for classification and regression. They are particularly effective for small datasets and high-dimensional spaces.
+</p>
+
+<p>
+** Key Concepts
+</p>
+<ul class="org-ul">
+<li><b><b>Hyperplane</b></b>: A decision boundary that separates data points into classes.</li>
+<li><b><b>Support Vectors</b></b>: Data points closest to the hyperplane, influencing its position.</li>
+<li><b><b>Margin</b></b>: The distance between the hyperplane and the nearest data points.
+<ul class="org-ul">
+<li>SVM maximizes this margin for optimal separation.</li>
+</ul></li>
+</ul>
+
+<p>
+** Objective Function
+</p>
+<ul class="org-ul">
+<li>For linear SVM:
+\[
+         \min \frac{1}{2} \|w\|^2 \quad \text{subject to } y_i (w \cdot x_i + b) \geq 1, \forall i
+         \]</li>
+<li>For non-linear SVM:
+Uses kernel functions (e.g., polynomial, RBF) to map data to higher dimensions.</li>
+</ul>
+
+<p>
+** Example: Cancer Classification
+    Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(e1071)
+
+# Train an SVM model
+svm_model &lt;- svm(disease ~ ., data = train_data, kernel = "radial")
+
+# Predict on test data
+predictions &lt;- predict(svm_model, test_data)
+
+# Evaluate accuracy
+confusionMatrix(predictions, test_data$disease)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0c3cdd5" class="outline-2">
+<h2 id="org0c3cdd5"><span class="section-number-2">11.</span> Clustering</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Clustering is an unsupervised learning method used to group similar data points. In healthcare, it is used for patient segmentation, disease clustering, and identifying subtypes of medical conditions.
+</p>
+
+<p>
+** K-Means Clustering
+</p>
+<ul class="org-ul">
+<li>Partitions data into \( k \) clusters by minimizing the sum of squared distances between points and their cluster centroids.</li>
+<li>Objective:
+\[
+         \min \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2
+         \]
+Where \( \mu_i \) is the centroid of cluster \( C_i \).</li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Perform K-Means clustering
+set.seed(123)
+kmeans_result &lt;- kmeans(data, centers = 3)
+
+# Visualize clusters
+plot(data, col = kmeans_result$cluster)
+points(kmeans_result$centers, col = 1:3, pch = 8, cex = 2)
+</pre>
+</div>
+
+<p>
+** Hierarchical Clustering
+</p>
+<ul class="org-ul">
+<li>Builds a tree-like structure (dendrogram) to group data based on similarity.</li>
+<li>Linkage methods:
+<ul class="org-ul">
+<li>Single linkage: Minimum distance between clusters.</li>
+<li>Complete linkage: Maximum distance between clusters.</li>
+<li>Average linkage: Average distance between clusters.</li>
+</ul></li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Perform hierarchical clustering
+dist_matrix &lt;- dist(data)
+hclust_result &lt;- hclust(dist_matrix, method = "ward.D2")
+
+# Plot dendrogram
+plot(hclust_result)
+
+# Cut tree into clusters
+clusters &lt;- cutree(hclust_result, k = 3)
+</pre>
+</div>
+
+<p>
+** DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+</p>
+<ul class="org-ul">
+<li>Groups points based on density and separates noise points.</li>
+<li>Parameters:
+<ul class="org-ul">
+<li>\( \epsilon \): Maximum distance for points to be considered neighbors.</li>
+<li>MinPts: Minimum number of points to form a dense region.</li>
+</ul></li>
+</ul>
+
+<p>
+Example R Code:
+</p>
+<div class="org-src-container">
+<pre class="src src-R"># Load library
+library(dbscan)
+
+# Perform DBSCAN clustering
+dbscan_result &lt;- dbscan(data, eps = 0.5, minPts = 5)
+
+# Visualize clusters
+plot(data, col = dbscan_result$cluster)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2025-01-26 Sun 00:00</p>
+<p class="author">Author: Faruk Becirovic</p>
+<p class="date">Created: 2025-01-26 Sun 07:51</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
